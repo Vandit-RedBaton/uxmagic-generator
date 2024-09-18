@@ -1,0 +1,27 @@
+{
+    "name": "ux-magic-component-generator",
+    "version": "1.0.0",
+    "description": "Your Figma Plugin",
+    "main": "dist/code.js",
+    "scripts": {
+        "build": "tsc -p tsconfig.json",
+        "watch": "npm run build -- --watch",
+        "minify": "terser dist/code.js -o dist/code.min.js",
+        "obfuscate": "javascript-obfuscator dist/code.min.js --output dist/code.js --compact true --control-flow-flattening true"
+    },
+    "author": "",
+    "license": "",
+    "devDependencies": {
+        "@figma/plugin-typings": "*",
+        "@figma/widget-typings": "^1.9.1",
+        "@types/node": "^20.11.19",
+        "javascript-obfuscator": "^4.1.0",
+        "terser": "^5.31.0",
+        "typescript": "*"
+    },
+    "dependencies": {
+        "@figma-plugin/helpers": "^0.15.2",
+        "@types/text-encoding": "^0.0.39",
+        "text-encoding": "^0.7.0"
+    }
+}

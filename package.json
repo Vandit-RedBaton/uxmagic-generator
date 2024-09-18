@@ -1,0 +1,39 @@
+{
+  "name": "uxmagic_ai_component_generator",
+  "version": "0.1.0",
+  "private": true,
+  "config": {
+    "siteURL": "",
+    "devSiteUrl": "http://localhost:3000/"
+  },
+  "scripts": {
+    "dev": "concurrently -n plugin,next \"npm run build:plugin:watch\" \"next dev\"",
+    "start": "next start",
+    "build": "concurrently -n plugin,next \"npm run build:plugin -- --define:SITE_URL='%npm_package_config_siteURL%'\" \"next build\"",
+    "lint": "next lint",
+    "build:plugin:watch": "esbuild plugin/code.tsx --bundle --target=es6 --loader:.svg=text --outfile=plugin/dist/code.js --define:SITE_URL='\"%npm_package_config_devSiteUrl%\"' --watch",
+    "build:plugin": "esbuild plugin/code.tsx --bundle --target=es6 --loader:.svg=text --outfile=plugin/dist/code.js",
+    "build:next": "next build"
+  },
+  "dependencies": {
+    "@capacitor/clipboard": "^6.0.0",
+    "axios": "^1.7.2",
+    "concurrently": "^8.2.2",
+    "esbuild": "^0.21.5",
+    "figx": "^0.1.3",
+    "next": "14.2.4",
+    "react": "^18",
+    "react-dom": "^18",
+    "zustand": "^4.5.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.4",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
+  }
+}

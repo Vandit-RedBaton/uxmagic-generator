@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "jsx": "react",
+    "jsxFactory": "figma.widget.h",
+    "jsxFragmentFactory": "figma.widget.Fragment",
+    "target": "es6",
+    "lib": [
+      "es6",
+      "dom"
+    ],
+    "strict": true,
+    "typeRoots": [
+      "./node_modules/@types",
+      "./node_modules/@figma"
+    ],
+    "skipLibCheck": true, // Skip type checking of all declaration files (*.d.ts)
+    "paths": {
+      "*": [
+        "./node_modules/*",
+        "./node_modules/@types/*"
+      ]
+    }
+  },
+  "exclude": [
+    "node_modules/@types/node"
+  ]
+}

@@ -1,0 +1,20 @@
+{
+    "name": "Ux Magic Component Generator",
+    "id": "1",
+    "api": "1.0.0",
+    "main": "dist/code.js",
+    "documentAccess": "dynamic-page",
+    "enableProposedApi": false,
+    "editorType": [
+        "figma"
+    ],
+    "permissions": [
+        "currentuser"
+    ],
+    "networkAccess": {
+        "allowedDomains": [
+            "*"
+        ],
+        "reasoning": "Internet access for local development."
+    }
+}
